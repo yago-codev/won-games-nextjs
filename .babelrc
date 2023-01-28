@@ -1,0 +1,31 @@
+{
+  // "next/babel" vai permitir que os testes sejam escritos utilizando recursos recentes do JS,
+  // "@babel/preset-typescript" vai permitir que o código TS seja compreensível
+  "presets": [
+    "next/babel",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    // configurando o styled-components para funcionar com SSR
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": false,
+            "displayName": false
+          }
+        ]
+      ]
+    }
+  }
+}
