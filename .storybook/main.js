@@ -9,5 +9,9 @@ module.exports = {
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-webpack4"
+  },
+  webpackFinal: (config) => {
+    config.resolve.modules.push(`${process.cwd()}/src`)
+    return config
   }
 }
